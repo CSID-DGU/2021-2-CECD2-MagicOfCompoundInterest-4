@@ -11,3 +11,4 @@
 Python을 사용한 자동 매매 프로그램 및 MongoDB, REACT를 이용해서 DB를 사용, 
 
 웹을 개발하여 Xing API를 이용한 모의투자를 바탕으로 선정한 조건을 자동 매매 프로그램에 대입
+![image](https://user-images.githubusercontent.com/32629687/137322155-4a9fa8e9-d486-4090-aa5e-93edc2e116ca.png)
