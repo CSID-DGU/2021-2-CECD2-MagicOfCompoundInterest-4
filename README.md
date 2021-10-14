@@ -12,3 +12,7 @@ Python을 사용한 자동 매매 프로그램 및 MongoDB, REACT를 이용해�
 
 웹을 개발하여 Xing API를 이용한 모의투자를 바탕으로 선정한 조건을 자동 매매 프로그램에 대입
 ![image](https://user-images.githubusercontent.com/32629687/137322155-4a9fa8e9-d486-4090-aa5e-93edc2e116ca.png)
+![image](https://user-images.githubusercontent.com/32629687/137345334-f4a4c9ae-0988-411e-b270-c559a11c4fea.png)
+agent 폴더에 해당하는 부분이 수집, 매매 모듈에 해당한다.
+
+
