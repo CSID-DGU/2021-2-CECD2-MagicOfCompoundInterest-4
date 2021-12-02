@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link href='fullcalendar/main.css' rel='stylesheet' />
+    <script src='fullcalendar/main.js'></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          dateClick: function(info){
+        	  alert('Date: ' + info.dateStr + '으로 연결합니다.');
+        	  document.write(info.dateStr);
+        	  //location.href = "DownloadCSV.jsp";
+          }
+        });
+        calendar.render();
+      });
+      
+
+    </script>
+  </head>
+  <body>
+    <div id='calendar'></div>
+    <p><a href="index.html"><strong>메인으로 돌아기기</strong></a> </p>
+  </body>
+</html>
