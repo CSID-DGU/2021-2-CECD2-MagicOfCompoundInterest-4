@@ -20,9 +20,12 @@ db.create_all()
 
 @application.route('/', methods=['GET'])
 def get_list():
-    date = datetime.strptime(request.args.get('datetime'), '%Y-%m-%d')
-    yesterday = date - timedelta(days=1)
-    result = Stock.query.filter(Stock.date == yesterday).all()
+    if request.args.get('datetime') is None:
+        return 'Please Input date', 403
+    else:
+        date = datetime.strptime(request.args.get('datetime'), '%Y-%m-%d')
+        yesterday = date - timedelta(days=1)
+        result = Stock.query.filter(Stock.date == yesterday).all()
     rows = []
 
     if len(result) == 0:
@@ -55,14 +58,13 @@ def get_list():
 @application.route('/', methods=['POST'])
 def create_stock():
     file = request.files['attachment'].read().decode('EUC-KR')
-    print(request.files['attachment'].filename)
     lines = file.split('\n')
 
-    for idx in range(1, len(lines) - 1, 2):
-        new_stock = Stock(lines[idx].split(',')[1], lines[idx + 1].split(',')[-1].strip(),
-                          request.files['attachment'].filename.split('.')[0])
-
-        db.session.add(new_stock)
+    for idx in range(0, len(lines), 2):
+        if len(lines[idx]) != 0:
+            new_stock = Stock(lines[idx].split(',')[1], lines[idx].split(',')[2].strip(),
+                              request.files['attachment'].filename.split('.')[0])
+            db.session.add(new_stock)
     db.session.commit()
 
     return {'success': True, 'status': 200}, 200
