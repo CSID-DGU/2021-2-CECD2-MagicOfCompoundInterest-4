@@ -36,7 +36,7 @@ def get_list():
     output.write("날짜, 업종명, 업종분야\n")
 
     for line in result:
-        rows.append([line.date, line.stock_name, line.stock_category])
+        rows.append([line.date, line.stock_name.replace('"', ''), line.stock_category.replace('"', '')])
 
     for row in rows:
         for index, col in enumerate(row):
@@ -49,7 +49,7 @@ def get_list():
         mimetype="text/csv",
         content_type='application/octet-stream'
     )
-    filename = yesterday.strftime('%Y-%m-%d.csv')
+    filename = yesterday.strftime('%Y-%m-%d')
     response.headers["Content-Disposition"] = "attachment; filename={}.csv".format(
         filename)
     return response
