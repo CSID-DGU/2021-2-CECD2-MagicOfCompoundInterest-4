@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <meta charset='utf-8' />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
     <link href='fullcalendar/main.css' rel='stylesheet' />
     <script src='fullcalendar/main.js'></script>
-    <script>
+    <script type="text/javascript">
 
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
           dateClick: function(info){
-        	  alert('Date: ' + info.dateStr + '으로 연결합니다.');
-        	  document.write(info.dateStr);
-        	  //location.href = "DownloadCSV.jsp";
+        	  strArray = info.dateStr.split('-');
+        	  if(strArray[1] == 10){
+        		  var url = null;
+        		  alert(info.dateStr + '전날 기준 추천 종목 csv를 다운로드합니다.');
+        		  url = "http://welfare-env-1.eba-6mmyfk2m.ap-northeast-2.elasticbeanstalk.com?datetime=2021-10-";
+        		  url = url + strArray[2];
+        		  location.href = url;
+        		  // location.href = "October.html";
+        		  // location.href = "DownloadOctCSV.jsp";
+        		}
+        	  else if(strArray[1] == 11){
+        		  var url = null;
+        		  alert(info.dateStr + '전날 기준 추천 종목 csv를 다운로드합니다.');
+        		  url = "http://welfare-env-1.eba-6mmyfk2m.ap-northeast-2.elasticbeanstalk.com?datetime=2021-11-";
+        		  url = url + strArray[2];
+        		  location.href = url;
+        		  //location.href = "November.html";
+        		  // location.href = "DownloadNovCSV.jsp";
+        	  }
+        	  else if(strArray[1] == 12){
+        		  var url = null;
+        		  alert(info.dateStr + '전날 추천 종목 csv를 다운로드합니다.');
+        		  url = "http://welfare-env-1.eba-6mmyfk2m.ap-northeast-2.elasticbeanstalk.com?datetime=2021-12-";
+        		  url = url + strArray[2];
+        		  location.href = url;
+        		  //location.href = "December.html";
+        		  //location.href = "DownloadDecCSV.jsp";
+        	  }
+
           }
         });
         calendar.render();
       });
       
+   
 
     </script>
   </head>
   <body>
     <div id='calendar'></div>
-    <p><a href="index.html"><strong>메인으로 돌아기기</strong></a> </p>
+    <p><a href="index.html"><strong>메인으로 돌아가기</strong></a> </p>
   </body>
 </html>
