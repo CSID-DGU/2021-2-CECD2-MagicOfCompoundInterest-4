@@ -41,6 +41,9 @@
 
 ---
 
+### 피터린치 가치 투자 전략
+- 
+
 ## 프로젝트 구성도 
 프로젝트 구성도는 아래와 같습니다. <br>
 <img src = "https://i.imgur.com/FAb15Qg.png" width = "75%" height = "100%">
