@@ -49,5 +49,5 @@
 
 ## 프로젝트 흐름도
 프로젝트 흐름도는 아래와 같습니다. <br>
-<img src="https://imgur.com/yXlens5" width="75%" height="100%">
+<img src = "https://i.imgur.com/yXlens5.png" width = "75%" height = "100%">
 
