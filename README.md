@@ -43,8 +43,7 @@
 
 ## 프로젝트 구성도 
 프로젝트 구성도는 아래와 같습니다. <br>
-<img src="https://imgur.com/yXlens5" width="75%" height="100%">
-<img src="https://i.imgur.com/MK5fcte.png" width="75%" height="100%">
+<img src = "https://i.imgur.com/FAb15Qg.png" width = "75%" height = "100%">
 
 
 ## 프로젝트 흐름도
